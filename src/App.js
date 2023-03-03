@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+import Portfolio from "./components/Portfolio";
+import Profile from "./components/Profile";
+import Skills from "./components/Skills";
+
+
 
 function App() {
+  const[mode,setmode]=useState(true)
+  function setTheme(){
+    setmode((prev)=>!prev)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar mode={mode} theme={setTheme}/>
+    <Profile mode={mode}/>
+    <Skills mode={mode}/>
+    <Portfolio mode={mode}/>
+    <Contact mode={mode}/>
+    </>
   );
 }
 
