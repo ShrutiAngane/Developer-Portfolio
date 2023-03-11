@@ -7,7 +7,7 @@ const Contact = (props) => {
     const[name,setname]=useState('')
     const[email,setmail]=useState('')
     const[message,setmessage]=useState('')
-    const[alert,setalert]=useState(true)
+    const[alert,setalert]=useState(false)
 
     function change_name(e){
       setname(e.target.value)
