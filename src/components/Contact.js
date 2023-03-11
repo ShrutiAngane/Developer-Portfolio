@@ -7,7 +7,7 @@ const Contact = (props) => {
     const[name,setname]=useState('')
     const[email,setmail]=useState('')
     const[message,setmessage]=useState('')
-    const[alert,setalert]=useState(false)
+    const[alert,setalert]=useState(true)
 
     function change_name(e){
       setname(e.target.value)
@@ -56,7 +56,7 @@ const Contact = (props) => {
             </form>
 
         </div>
-        {alert && <div className={`flex flex-col items-center absolute z-10 max-[450px]:w-[320px] w-[370px] h-[200px] rounded-lg bg-[#FFFFFF] ${props.mode?'':'border-2 shadow-lg'} mb-[146px]`}>
+        {alert && <div className={`flex flex-col items-center animate-ascend absolute z-10 max-[450px]:w-[320px] w-[370px] h-[200px] rounded-lg bg-[#FFFFFF] ${props.mode?'':'border-2 shadow-lg'} mb-[146px]`}>
           <div className='flex items-center mt-[60px]'>
             <BsCheckCircleFill size={30}/>
             <h4 className='text-[16px] text-[#000000] font-normal ml-2 max-[450px]:text-center max-[450px]:w-[180px]'>Your Message has been sent successfully!</h4>
@@ -66,7 +66,7 @@ const Contact = (props) => {
           setmail('')
           setmessage('')}}>Ok</button>
           </div>}
-            <Link to='navbar' smooth duration={1000} className={`flex items-center justify-center max-[450px]:w-[50px] max-[450px]:h-[50px] w-[80px] h-[80px] bg-teal-500 rounded-full hover:cursor-pointer absolute right-5 lg:right-[100px] mb-10 ${props.mode?'':'shadow-xl'}`}>
+            <Link to='navbar' smooth duration={1000} className={`flex items-center justify-center max-[450px]:w-[50px] max-[450px]:h-[50px] w-[80px] h-[80px] animate-bounce bg-teal-500 rounded-full hover:cursor-pointer absolute right-5 lg:right-[100px] mb-10 ${props.mode?'':'shadow-xl'}`}>
             <BsArrowUp size={30}/>
             </Link>
     </section>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
 import Profile from "./components/Profile";
@@ -19,6 +20,7 @@ function App() {
     <Skills mode={mode}/>
     <Portfolio mode={mode}/>
     <Contact mode={mode}/>
+    <Footer mode={mode}/>
     </>
   );
 }

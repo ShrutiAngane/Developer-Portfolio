@@ -7,7 +7,7 @@ const Profile = (props) => {
   return (
     <section className={`${props.mode?'bg-gray-900':''} flex flex-col items-center justify-around max-w-full h-[783px]`}>
         <h1 className='max-[450px]:text-[45px] text-[60px] text-teal-700 font-extrabold mt-5'>Shruti Angane</h1>
-        <h4 className={`font-medium text-[25px] ${props.mode?'text-[#FFFFFF]':'text-[#000000]'}`}>Front-End Developer</h4>
+        <h4 className={`font-medium text-[25px] ${props.mode?'text-[#FFFFFF]':'text-[#000000] font-logo'}`}>Front-End Developer</h4>
         <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[18px] font-normal text-center max-[450px]:w-[300px] w-[400px] lg:w-[600px]`}>Hello ! I am a self-taught programmer and a front-end enthusiast web developer based in Mumbai.I love coding and bringing out ideas and designs to life through it. Currently I am focused in building responsive and scalable front-end products.</p>
         <Link to='portfolio' smooth duration={1000} className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[165px] h-[43px] font-medium hover:cursor-pointer'>
             Portfolio 
