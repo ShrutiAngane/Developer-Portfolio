@@ -41,32 +41,32 @@ const Contact = (props) => {
     <>
     <section className={`${props.mode?'bg-gray-900':''} flex items-end justify-center max-w-full h-[600px]`}>
         <div className='flex flex-col items-center justify-evenly mt-10 mb-6'>
-            <h2 className={`${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[40px] font-medium`}>Contact Me</h2>
+            <h2 className={`${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[23px] font-medium font-bree`}>Contact Me</h2>
             <form className='flex flex-col items-center justify-evenly h-[400px] gap-[40px] mt-5' ref={form} onSubmit={sendData}>
                 <div className='flex items-center justify-around gap-5'>
-                <input name='username' type='text' placeholder='Enter your full name here' id='name' className={`w-[300px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2`} value={name} onChange={change_name} required></input>
+                <input name='username' type='text' placeholder='Enter your full name here' id='name' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} value={name} onChange={change_name} required></input>
                 </div>
                 <div className='flex items-center justify-around gap-5'>
-                <input name='useremail' type='email' placeholder='Enter your email id here' id='email' className={`w-[300px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2`} value={email} onChange={change_email} required></input>
+                <input name='useremail' type='email' placeholder='Enter your email id here' id='email' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} value={email} onChange={change_email} required></input>
                 </div>
                 <div className='flex items-center justify-around gap-5'>
-                <textarea name='message' type='text' placeholder='Type in your message here' id='msg' className={`w-[300px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  bg-transparent border-2 rounded-lg px-2`} rows={4} value={message} onChange={change_message} required></textarea>
+                <textarea name='message' type='text' placeholder='Type in your message here' id='msg' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  bg-transparent border-2 rounded-lg px-2 font-bree`} rows={4} value={message} onChange={change_message} required></textarea>
                 </div>
-                <button type='submit' className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[165px] h-[43px] font-medium'>Submit</button>
+                <button type='submit' className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[150px] h-[37px] lg:w-[165px] lg:h-[43px] md:text-[14px] text-[18px] font-medium font-bree'>Submit</button>
             </form>
 
         </div>
         {alert && <div className={`flex flex-col items-center animate-ascend absolute z-10 max-[450px]:w-[320px] w-[370px] h-[200px] rounded-lg bg-[#FFFFFF] ${props.mode?'':'border-2 shadow-lg'} mb-[146px]`}>
           <div className='flex items-center mt-[60px]'>
             <BsCheckCircleFill size={30}/>
-            <h4 className='text-[16px] text-[#000000] font-normal ml-2 max-[450px]:text-center max-[450px]:w-[180px]'>Your Message has been sent successfully!</h4>
+            <h4 className='text-[16px] text-[#000000] font-normal ml-2 max-[450px]:text-center max-[450px]:w-[180px] font-bree'>Your Message has been sent successfully!</h4>
           </div>
-          <button className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[135px] h-[33px] font-medium mt-[20px]' onClick={()=>{setalert((prev)=>!prev)
+          <button className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[135px] h-[33px] font-medium mt-[20px] font-bree' onClick={()=>{setalert((prev)=>!prev)
           setname('')
           setmail('')
           setmessage('')}}>Ok</button>
           </div>}
-            <Link to='navbar' smooth duration={1000} className={`flex items-center justify-center max-[450px]:w-[50px] max-[450px]:h-[50px] w-[80px] h-[80px] animate-bounce bg-teal-500 rounded-full hover:cursor-pointer absolute right-5 lg:right-[100px] mb-10 ${props.mode?'':'shadow-xl'}`}>
+            <Link to='navbar' smooth duration={1000} className={`flex items-center justify-center max-[450px]:w-[50px] max-[450px]:h-[50px] w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] animate-bounce bg-teal-500 rounded-full hover:cursor-pointer absolute right-5 lg:right-[100px] mb-10 ${props.mode?'':'shadow-xl'}`}>
             <BsArrowUp size={30}/>
             </Link>
     </section>

@@ -7,6 +7,7 @@ module.exports = {
       fontFamily:{
         logo: ['Tilt Neon', 'cursive'],
         lobster:['Lobster', 'cursive'],
+        bree:['Bree Serif', 'serif']
       },
       animation:{
         ascend:'ascend 1s ease-in'

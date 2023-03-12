@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 
 .mode-light{
@@ -25,6 +26,9 @@
 }
 .socials{
     fill:#FFFFFF;
+}
+.socials-light{
+    fill:#867E7E;
 }
 @media screen and (max-width:450px) {
     .mode-light,.mode-dark{
