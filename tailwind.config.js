@@ -12,6 +12,10 @@ module.exports = {
       animation:{
         ascend:'ascend 1s ease-in'
       },
+      boxShadow :{
+        custom: '0 0 12px 8px #14b8a6',
+
+      },
       keyframes:{
         ascend:{
           '0%':{transform: 'translateY(0px)',opacity:'0.7'},
