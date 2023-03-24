@@ -1,25 +1,14 @@
 import React, { useRef, useState } from 'react'
 import { BsCheckCircleFill,BsArrowUp } from "react-icons/bs"
 import { Link } from 'react-scroll'
+import {useForm} from 'react-hook-form'
 
 const Contact = (props) => {
     const form=useRef(null)
-    const[name,setname]=useState('')
-    const[email,setmail]=useState('')
-    const[message,setmessage]=useState('')
+    const {register,handleSubmit,formState:{errors}}=useForm()
     const[alert,setalert]=useState(false)
-
-    function change_name(e){
-      setname(e.target.value)
-    }
-    function change_email(e){
-      setmail(e.target.value)
-    }
-    function change_message(e){
-      setmessage(e.target.value)
-    }
-    function sendData(e){
-      e.preventDefault();
+    function onSubmit(){
+      // e.preventDefault();
       const formData=new FormData(form.current)
       const url='https://api.emailjs.com/api/v1.0/email/send-form'
       formData.append('service_id', 'service_xqgt7b8');
@@ -37,20 +26,28 @@ const Contact = (props) => {
       })
       form.current.reset()
       }
+      console.log(errors)
   return (
     <>
     <section className={`${props.mode?'bg-gray-900':''} flex items-end justify-center max-w-full h-[600px]`}>
         <div className='flex flex-col items-center justify-evenly mt-10 mb-6'>
-            <h2 className={`${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[23px] font-medium font-bree`}>Contact Me</h2>
-            <form className='flex flex-col items-center justify-evenly h-[400px] gap-[40px] mt-5' ref={form} onSubmit={sendData}>
-                <div className='flex items-center justify-around gap-5'>
-                <input name='username' type='text' placeholder='Enter your full name here' id='name' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} value={name} onChange={change_name} required></input>
+            <h2 className={`${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[1.1rem] font-medium font-bree`}>Lets talk work!</h2>
+            <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] md:text-[18px] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Reach out to me using the below form</p>
+            <form className='flex flex-col items-center justify-evenly h-[400px] mt-5' ref={form} onSubmit={handleSubmit(onSubmit)}>
+                <div className='flex flex-col'>
+                <input name='username' type='text' placeholder='Enter your full name here' id='name' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} {...register("username",{required:'This field cannot be empty'})}></input>
+                <p className='text-[red] text-[1rem]'>{errors.username?.message}</p>
                 </div>
-                <div className='flex items-center justify-around gap-5'>
-                <input name='useremail' type='email' placeholder='Enter your email id here' id='email' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} value={email} onChange={change_email} required></input>
+                <div className='flex flex-col'>
+                <input name='useremail' type='email' placeholder='Enter your email id here' id='email' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} {...register("useremail",{required:'This field cannot be empty',pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "This is not a valid email",
+                },})}></input>
+                <p className='text-[red] text-[1rem]'>{errors.useremail?.message}</p>
                 </div>
-                <div className='flex items-center justify-around gap-5'>
-                <textarea name='message' type='text' placeholder='Type in your message here' id='msg' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  bg-transparent border-2 rounded-lg px-2 font-bree`} rows={4} value={message} onChange={change_message} required></textarea>
+                <div className='flex flex-col'>
+                <textarea name='message' type='text' placeholder='Type in your message here' id='msg' className={`w-[250px] lg:w-[400px] focus:outline-none ${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  bg-transparent border-2 rounded-lg px-2 font-bree`} rows={4}  {...register("message",{required:'This field cannot be empty'})}></textarea>
+                <p className='text-[red] text-[1rem]'>{errors.message?.message}</p>
                 </div>
                 <button type='submit' className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[150px] h-[37px] lg:w-[165px] lg:h-[43px] md:text-[14px] text-[18px] font-medium font-bree'>Submit</button>
             </form>
@@ -61,10 +58,7 @@ const Contact = (props) => {
             <BsCheckCircleFill size={30}/>
             <h4 className='text-[16px] text-[#000000] font-normal ml-2 max-[450px]:text-center max-[450px]:w-[180px] font-bree'>Your Message has been sent successfully!</h4>
           </div>
-          <button className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[135px] h-[33px] font-medium mt-[20px] font-bree' onClick={()=>{setalert((prev)=>!prev)
-          setname('')
-          setmail('')
-          setmessage('')}}>Ok</button>
+          <button className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[135px] h-[33px] font-medium mt-[20px] font-bree' onClick={()=>{setalert((prev)=>!prev)}}>Ok</button>
           </div>}
             <Link to='navbar' smooth duration={1000} className={`flex items-center justify-center max-[450px]:w-[50px] max-[450px]:h-[50px] w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] animate-bounce bg-teal-500 rounded-full hover:cursor-pointer absolute right-5 lg:right-[100px] mb-10 ${props.mode?'':'shadow-xl'}`}>
             <BsArrowUp size={30}/>

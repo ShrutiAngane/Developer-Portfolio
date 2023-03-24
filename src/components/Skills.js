@@ -3,10 +3,10 @@ import { skills } from '../constants/skillsList'
 
 const Skills = (props) => {
   return (
-    <section className={`${props.mode?'bg-gray-900':''} flex flex-col items-center justify-around max-w-full lg:h-[1300px]`}>
+    <section className={`${props.mode?'bg-gray-900':''} flex flex-col items-center justify-evenly max-w-full lg:h-[1300px]`}>
       <div className='flex flex-col justify-evenly items-center mt-5'>
         <h2 className={`${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[23px] font-medium font-bree`}>Skills</h2>
-        <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] md:text-[18px] text-center font-normal mt-4 font-bree`}>Tech stack that I follow and have experience working with</p>
+        <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[1.1rem] text-center font-normal mt-4 font-bree`}>Tech stack that I follow and have experience working with</p>
 
       </div>
         <div className='flex flex-col justify-evenly items-center md:grid md:grid-cols-2 lg:grid-cols-3 gap-[30px] md:gap-[60px]'>

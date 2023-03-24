@@ -10,7 +10,7 @@ const Profile = (props) => {
             <h1 className='text-[40px] lg:text-[50px] text-teal-700 font-extrabold mt-5 font-bree '>Shruti Angane</h1>
             <h4 className={`font-medium text-[23px] ${props.mode?'text-[#FFFFFF]':'text-[#000000] mt-[10px] font-bree'}`}>Front-End Developer</h4>
         </div>
-        <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] font-normal text-center max-[450px]:w-[300px] w-[400px] lg:w-[600px]`}>Hello ! I am a self-taught programmer and a front-end enthusiast web developer based in Mumbai.I love coding and bringing out ideas and designs to life through it. Currently I am focused in building responsive and scalable front-end products.</p>
+        <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[1rem] font-normal text-center max-[450px]:w-[300px] w-[400px] lg:w-[600px]`}>Hello ! I am a self-taught programmer and a front-end enthusiast web developer based in Mumbai.I love coding and bringing out ideas and designs to life through it. Currently I am focused in building responsive and scalable front-end products.</p>
         <div className='md:hidden flex items-center justify-center gap-5 w-full h-fit'>
             <a href='https://github.com/ShrutiAngane' target='_blank' rel="noreferrer"><BsGithub size={30} className={`${props.mode?'socials':''}`}/></a>
             <a href='https://www.linkedin.com/in/shruti-angane-866959182/' target='_blank' rel="noreferrer"><BsLinkedin size={30} className={`${props.mode?'socials':''}`}/></a>

@@ -6,7 +6,7 @@ const Portfolio = (props) => {
     <section className={`${props.mode?'bg-gray-900':''} flex flex-col justify-evenly items-center max-w-full`} name='portfolio'>
       <div className='flex flex-col justify-evenly items-center mt-12 lg:mt-5'>
         <h2 className={`${props.mode?'text-[#FFFFFF]':'text-[#000000]'} text-[23px] font-medium font-bree`}>Portfolio</h2>
-        <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] md:text-[18px] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Some of the projects that I have worked on using the above mentioned tech stack</p>
+        <p className={`${props.mode?'text-[#FFFFFF]':'text-[#706C6C]'} text-[1.1rem] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Some of the projects that I have worked on using the above mentioned tech stack</p>
       </div>
       <div className='flex flex-col justify-evenly items-center md:grid md:grid-cols-2 gap-[30px] md:gap-[60px] mt-5'>
         {projects.map((element)=>{
