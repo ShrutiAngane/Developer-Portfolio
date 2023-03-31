@@ -19,7 +19,7 @@ export const projects=[
     },
     {
         id:3,
-        title:'Text Convertor and translator',
+        title:'Text Converter and translater',
         img:text,
         code:'https://github.com/ShrutiAngane/TextConverter',
         demo:'https://text-converter-app.netlify.app/'

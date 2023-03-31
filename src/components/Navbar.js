@@ -11,7 +11,7 @@ const Navbar = (props) => {
                 <div className='flex items-center' onClick={props.theme}>
                 {props.mode?<BsFillBrightnessHighFill className='mode-dark'/>:<BsFillMoonStarsFill className='mode-light'/>}
                 </div>
-                <button className={`bg-teal-500 rounded-lg max-[450px]:w-[80px] w-[100px] h-[37px] lg:w-[165px] lg:h-[43px] md:text-[14px] text-[18px] font-medium ${props.mode?'text-black':'text-[#FFFFFF]'} font-bree`}><a href={pdf} download>Resume</a></button>
+                <button className={`bg-teal-500 rounded-lg max-[450px]:w-[80px] w-[100px] h-[37px] lg:w-[165px] lg:h-[43px] text-[14px] md:text-[18px] font-medium ${props.mode?'text-black':'text-[#FFFFFF]'} font-bree`}><a href={pdf} download>Resume</a></button>
             </div>
         </nav>
     </header>
