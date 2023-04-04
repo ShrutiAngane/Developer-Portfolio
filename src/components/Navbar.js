@@ -15,7 +15,7 @@ const Navbar = () => {
                 <div className='flex items-center' onClick={()=>dispatch(changeTheme())}>
                 {theme?<BsFillBrightnessHighFill className='mode-dark'/>:<BsFillMoonStarsFill className='mode-light'/>}
                 </div>
-                <button className={`bg-teal-500 rounded-lg max-[450px]:w-[80px] w-[100px] h-[37px] lg:w-[165px] lg:h-[43px] text-[14px] md:text-[18px] font-medium text-black font-bree`}>
+                <button className={`bg-teal-500 rounded-lg max-[450px]:w-[80px] w-[100px] h-[37px] md:w-[165px] md:h-[43px] text-[14px] md:text-[18px] font-medium text-black font-bree`}>
                   <a href={pdf} download className='flex justify-center gap-1 items-center'>Resume <BsCloudArrowDownFill size={20}/></a></button>
             </div>
         </nav>
