@@ -3,6 +3,7 @@ import { BsCheckCircleFill,BsArrowUp } from "react-icons/bs"
 import { Link } from 'react-scroll'
 import {useForm} from 'react-hook-form'
 import { useSelector } from 'react-redux'
+import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
     const theme=useSelector((state)=>state.theme.value)
@@ -31,10 +32,11 @@ const Contact = () => {
       console.log(errors)
   return (
     <>
-    <section className={`${theme?'bg-gray-900':''} flex items-end justify-center max-w-full h-[600px]`}>
+    <section className={`${theme?'bg-gray-900':''} flex items-end justify-center max-w-full h-[600px] animate-fade`}>
         <div className='flex flex-col items-center justify-evenly mt-10 mb-6'>
-            <h2 className={`${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[1.1rem] font-medium font-bree`}>Lets talk work!</h2>
-            <p className={`${theme?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] md:text-[18px] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Reach out to me using the below form</p>
+            <Fade top><h2 className={`${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[1.1rem] font-medium font-bree`}>Lets talk work!</h2></Fade>
+            <Fade top><p className={`${theme?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] md:text-[18px] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Reach out to me using the below form</p></Fade>
+            <Fade bottom>
             <form className='flex flex-col items-center justify-evenly h-[400px] mt-5' ref={form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex flex-col'>
                 <input name='username' type='text' placeholder='Enter your full name here' id='name' className={`w-[250px] lg:w-[400px] focus:outline-none ${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} {...register("username",{required:'This field cannot be empty'})}></input>
@@ -53,6 +55,7 @@ const Contact = () => {
                 </div>
                 <button type='submit' className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[150px] h-[37px] lg:w-[165px] lg:h-[43px] md:text-[14px] text-[18px] font-medium font-bree'>Submit</button>
             </form>
+            </Fade>
 
         </div>
         {alert && <div className={`flex flex-col items-center animate-ascend absolute z-10 max-[450px]:w-[320px] w-[370px] h-[200px] rounded-lg bg-[#FFFFFF] ${theme?'':'border-2 shadow-lg'} mb-[146px]`}>

@@ -1,16 +1,18 @@
 import React from 'react'
 import { projects } from '../constants/projects'
 import { useSelector } from 'react-redux'
+import Fade from 'react-reveal/Fade';
 
 const Portfolio = () => {
   const theme=useSelector((state)=>state.theme.value)
   return (
     <section className={`${theme?'bg-gray-900':''} flex flex-col justify-evenly items-center max-w-full`} name='portfolio'>
-      <div className='flex flex-col justify-evenly items-center mt-12 lg:mt-5'>
-        <h2 className={`${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[23px] font-medium font-bree`}>Portfolio</h2>
-        <p className={`${theme?'text-[#FFFFFF]':'text-[#706C6C]'} text-[1.1rem] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Some of the projects that I have worked on using the above mentioned tech stack</p>
+      <div className='flex flex-col justify-evenly items-center mt-12 lg:mt-5 animate-fade'>
+        <Fade top><h2 className={`${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[23px] font-medium font-bree`}>Portfolio</h2></Fade>
+        <Fade  top><p className={`${theme?'text-[#FFFFFF]':'text-[#706C6C]'} text-[1.1rem] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Some of the projects that I have worked on using the above mentioned tech stack</p></Fade>
       </div>
-      <div className='flex flex-col justify-evenly items-center md:grid md:grid-cols-2 gap-[30px] md:gap-[60px] mt-5'>
+      <Fade bottom>
+      <div className='flex flex-col justify-evenly items-center md:grid md:grid-cols-2 gap-[30px] md:gap-[60px] mt-5 animate-fade'>
         {projects.map((element)=>{
           return <div key={element.id} className={`flex flex-col items-center h-[300px] w-[300px] mt-5 rounded-lg hover:cursor-pointer hover:scale-105 duration-500 ${theme?'customshadow-dark':'customshadow-light border-2 border-teal-500'}`}>
             <img src={element.img} alt='project' className='rounded-t-lg'></img>
@@ -23,6 +25,7 @@ const Portfolio = () => {
         })}
 
       </div>
+      </Fade>
       
     </section>
   )
