@@ -29,7 +29,6 @@ const Contact = () => {
       })
       form.current.reset()
       }
-      console.log(errors)
   return (
     <>
     <section className={`${theme?'bg-gray-900':''} flex items-end justify-center max-w-full h-[600px] animate-fade`}>
@@ -37,6 +36,7 @@ const Contact = () => {
             <Fade top><h2 className={`${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[1.1rem] font-medium font-bree`}>Lets talk work!</h2></Fade>
             <Fade top><p className={`${theme?'text-[#FFFFFF]':'text-[#706C6C]'} text-[16px] md:text-[18px] text-center w-[300px] md:w-[350px] mt-4 font-bree`}>Reach out to me using the below form</p></Fade>
             <Fade bottom>
+            <div>
             <form className='flex flex-col items-center justify-evenly h-[400px] mt-5' ref={form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex flex-col'>
                 <input name='username' type='text' placeholder='Enter your full name here' id='name' className={`w-[250px] lg:w-[400px] focus:outline-none ${theme?'text-[#FFFFFF]':'text-[#000000]'} text-[16px]  h-[50px] bg-transparent border-2 rounded-lg px-2 font-bree`} {...register("username",{required:'This field cannot be empty'})}></input>
@@ -55,8 +55,8 @@ const Contact = () => {
                 </div>
                 <button type='submit' className='flex items-center justify-center bg-teal-500 rounded-lg max-[450px]:w-[120px] w-[150px] h-[37px] lg:w-[165px] lg:h-[43px] md:text-[14px] text-[18px] font-medium font-bree'>Submit</button>
             </form>
+            </div>
             </Fade>
-
         </div>
         {alert && <div className={`flex flex-col items-center animate-ascend absolute z-10 max-[450px]:w-[320px] w-[370px] h-[200px] rounded-lg bg-[#FFFFFF] ${theme?'':'border-2 shadow-lg'} mb-[146px]`}>
           <div className='flex items-center mt-[60px]'>
