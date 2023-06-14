@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {BsGithub,BsLinkedin,BsEnvelope} from "react-icons/bs";
-import { useSelector } from 'react-redux';
+import { ThemeContext } from '../App';
 
 const Footer = () => {
-  const theme=useSelector((state)=>state.theme.value)
+  const {mode}=useContext(ThemeContext)
   return (
-    <section className={`${theme?'bg-[#0B0F18]':'bg-teal-800'} max-w-full h-[200px] flex justify-center items-center`}>
+    <section className={`${mode?'bg-[#0B0F18]':'bg-teal-800'} max-w-full h-[200px] flex justify-center items-center`}>
         <div className='flex flex-col items-center justify-evenly lg:w-1/3 h-[200px]'>
             <div className='flex flex-col items-center justify-evenly w-full'>
                 <h4 className={`text-[#FFFFFF] text-[25px] font-semibold font-bree`}>Stay Connected</h4>
