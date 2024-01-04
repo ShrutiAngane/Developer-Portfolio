@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import { BsFillBrightnessHighFill,BsFillMoonStarsFill,BsCloudArrowDownFill } from "react-icons/bs";
-import pdf from '../assets/ShrutiAngane-Resume.pdf'
+import pdf from '../assets/Shruti Angane Resume.pdf'
 import Fade from 'react-reveal/Fade';
 import { ThemeContext } from '../App';
 
